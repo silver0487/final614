@@ -1,0 +1,266 @@
+$top_bgc:rgb(62, 143, 224); 
+$top_color: #ffffff;
+$color1: rgb(117, 62, 127);
+$color2: rgb(255, 213, 28);
+$color3: rgb(68, 99, 117);
+$color4: rgb(61, 204, 134);
+$color5: rgb(224, 145, 62);
+
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  // border: solid 1px red;
+}
+
+body {
+  position: relative;
+  background-color: #fcf6ba;
+  box-sizing: border-box;
+  border-top: solid 30px #116584;
+  border-bottom: solid 30px #116584;
+  overflow: hidden;
+
+}
+.Top {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: $top_bgc;
+  color: $top_color;
+  border-radius: 30px 30px 225px 30px;
+  margin-top: -100px;
+  margin-left: -75px;
+  font-family: 'Anton', sans-serif;
+  h3 {
+  margin-left: 100px;
+  margin-top: 100px;
+  font-size: 25px;
+  width: 100px;
+  line-height: 60px;
+    span{
+    background-color: blue;
+    font-size: 50px;
+    }
+  }
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+}
+
+.namecard {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  top: 50%; 
+  padding: 0px 20px 30px 20px;
+  overflow: hidden;
+  background-color: $top_bgc;
+  color: $top_color;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 20px 25px 15px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 'Noto Sans TC', sans-serif;  
+  transition: 0.5s;
+  hr {
+  border-color: #fff;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  }
+  h2 {
+  font-size: 25px;
+  }
+  span {
+  font-size: 18px;
+  }
+  h5 {
+  font-size: 16px;
+  font-weight: 400;
+  }
+}
+
+.namecard:hover{
+  transform: translate(-50px,-50px);
+  box-shadow: -20px -25px 15px -15px rgba(0,0,0,0.5);
+}
+
+
+
+.allbub {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  z-index: -3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+
+}
+
+
+@keyframes back {
+  0% {
+    background-color: $color1;
+  }
+  25% {
+    background-color: $color2;
+  }
+  50% {
+    background-color: $color5;
+  }
+  75% {
+    background-color: $color4;
+  }
+  100% {
+    background-color: $color1;
+  }
+}
+.allbub {
+    animation: back 8s infinite;
+}
+
+@keyframes title {
+  0% {
+    margin-top: -200px;
+    margin-left: -300px;
+  }
+  50% {
+    margin-top: -75px;
+    margin-left: -50px;
+  }
+  100% {
+    margin-top: -100px;
+    margin-left: -75px;
+  }
+}
+
+.Top {
+          animation-name: title;
+          animation-duration: 1.5s;
+}
+
+$clr1: #fff;
+$hand-size: 70vmin;
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #7348FA;
+}
+
+.hand-container {
+  position: relative;
+  margin: auto;
+  width: $hand-size;
+  height: $hand-size;
+}
+
+@keyframes wave-hi {
+  0%,100%{
+    transform: rotate(30deg) rotate3d(0,1,0,20deg) translate( 5%,-10%);
+    box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.2);
+  }
+  25%{
+    transform: rotate(-20deg) rotate3d(0,1,0,-20deg) translate(-5%,0);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+  }
+  50%{
+    transform: rotate(20deg) rotate3d(0,1,0,20deg) translate( 5%,-10%);
+    box-shadow: 3px 5px 5px 0px rgba(0,0,0,0.2);
+  }
+  75%{
+    transform: rotate(-30deg) rotate3d(0,1,0,-20deg) translate( -5%, 0%);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+  }
+}
+
+.hand, .hand-top {
+  background: $clr1;
+  height: $hand-size * .4;
+  width: $hand-size * .4;
+  border-radius: $hand-size * .14 $hand-size * .14 $hand-size * .1 $hand-size * .1;
+  position: absolute;
+  bottom: 15%;
+  left: 30%;
+  animation: wave-hi 3s infinite;
+  box-shadow: 3px 10px 5px 0px rgba(0,0,0,0.3);
+}
+
+.hand-top {
+  box-shadow: none;
+}
+
+.finger {
+  box-shadow: 0px 6px 3px 6px rgba(0,0,0,0.3);
+  width: $hand-size * .084;
+  height: $hand-size * .4;
+  position: absolute;
+  bottom: 68%;
+  background: $clr1;
+  border-radius: $hand-size * .04;
+  left: 0vmin;
+  
+  &:nth-child(2){
+    left: $hand-size * .106;
+    bottom: 86%;
+  }
+  
+  &:nth-child(3){
+    left: $hand-size * .21;
+    bottom: 76%;
+  }
+  
+  &:nth-child(4){
+    left: $hand-size * .316;
+    bottom: 54%;
+  }
+}
+
+.thumb {
+  width: $hand-size * .12;
+  height: $hand-size * .37;
+  background: $clr1;
+  position: absolute;
+  transform: skew(30deg);
+  border-radius: 
+    $hand-size * .1 
+    $hand-size * .04 
+    0 
+    $hand-size * .1;
+  left: $hand-size * -.08;
+  bottom: 0vmin;
+  box-shadow: 0px 2px 5px 3px rgba(0,0,0,0.2);
+}
+
+
+
+
+.snowfall {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url("https://user-images.githubusercontent.com/7342669/50293046-ab4ed880-0440-11e9-8537-8a0e70729b34.png"),
+    url("https://user-images.githubusercontent.com/7342669/50293049-ad189c00-0440-11e9-8cae-a57ad65c22ca.png"),
+    url("https://user-images.githubusercontent.com/7342669/50294834-c58ab580-0444-11e9-84b6-186b19edf94d.png");
+  animation: letItSnow 20s linear infinite;
+  z-index: 11;
+}
+
+@keyframes letItSnow {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px;
+  }
+}
+

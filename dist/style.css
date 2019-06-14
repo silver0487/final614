@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  position: relative;
+  background-color: #fcf6ba;
+  box-sizing: border-box;
+  border-top: solid 30px #116584;
+  border-bottom: solid 30px #116584;
+  overflow: hidden;
+}
+
+.Top {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: #3e8fe0;
+  color: #ffffff;
+  border-radius: 30px 30px 225px 30px;
+  margin-top: -100px;
+  margin-left: -75px;
+  font-family: 'Anton', sans-serif;
+}
+.Top h3 {
+  margin-left: 100px;
+  margin-top: 100px;
+  font-size: 25px;
+  width: 100px;
+  line-height: 60px;
+}
+.Top h3 span {
+  background-color: blue;
+  font-size: 50px;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+}
+
+.namecard {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  padding: 0px 20px 30px 20px;
+  overflow: hidden;
+  background-color: #3e8fe0;
+  color: #ffffff;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 20px 25px 15px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 'Noto Sans TC', sans-serif;
+  transition: 0.5s;
+}
+.namecard hr {
+  border-color: #fff;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+.namecard h2 {
+  font-size: 25px;
+}
+.namecard span {
+  font-size: 18px;
+}
+.namecard h5 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.namecard:hover {
+  transform: translate(-50px, -50px);
+  box-shadow: -20px -25px 15px -15px rgba(0, 0, 0, 0.5);
+}
+
+.allbub {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  z-index: -3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+}
+
+@keyframes back {
+  0% {
+    background-color: #753e7f;
+  }
+  25% {
+    background-color: #ffd51c;
+  }
+  50% {
+    background-color: #e0913e;
+  }
+  75% {
+    background-color: #3dcc86;
+  }
+  100% {
+    background-color: #753e7f;
+  }
+}
+.allbub {
+  animation: back 8s infinite;
+}
+
+@keyframes title {
+  0% {
+    margin-top: -200px;
+    margin-left: -300px;
+  }
+  50% {
+    margin-top: -75px;
+    margin-left: -50px;
+  }
+  100% {
+    margin-top: -100px;
+    margin-left: -75px;
+  }
+}
+.Top {
+  animation-name: title;
+  animation-duration: 1.5s;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #7348FA;
+}
+
+.hand-container {
+  position: relative;
+  margin: auto;
+  width: 70vmin;
+  height: 70vmin;
+}
+
+@keyframes wave-hi {
+  0%,100% {
+    transform: rotate(30deg) rotate3d(0, 1, 0, 20deg) translate(5%, -10%);
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    transform: rotate(-20deg) rotate3d(0, 1, 0, -20deg) translate(-5%, 0);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: rotate(20deg) rotate3d(0, 1, 0, 20deg) translate(5%, -10%);
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  75% {
+    transform: rotate(-30deg) rotate3d(0, 1, 0, -20deg) translate(-5%, 0%);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+.hand, .hand-top {
+  background: #fff;
+  height: 28vmin;
+  width: 28vmin;
+  border-radius: 9.8vmin 9.8vmin 7vmin 7vmin;
+  position: absolute;
+  bottom: 15%;
+  left: 30%;
+  animation: wave-hi 3s infinite;
+  box-shadow: 3px 10px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hand-top {
+  box-shadow: none;
+}
+
+.finger {
+  box-shadow: 0px 6px 3px 6px rgba(0, 0, 0, 0.3);
+  width: 5.88vmin;
+  height: 28vmin;
+  position: absolute;
+  bottom: 68%;
+  background: #fff;
+  border-radius: 2.8vmin;
+  left: 0vmin;
+}
+.finger:nth-child(2) {
+  left: 7.42vmin;
+  bottom: 86%;
+}
+.finger:nth-child(3) {
+  left: 14.7vmin;
+  bottom: 76%;
+}
+.finger:nth-child(4) {
+  left: 22.12vmin;
+  bottom: 54%;
+}
+
+.thumb {
+  width: 8.4vmin;
+  height: 25.9vmin;
+  background: #fff;
+  position: absolute;
+  transform: skew(30deg);
+  border-radius: 7vmin 2.8vmin 0 7vmin;
+  left: -5.6vmin;
+  bottom: 0vmin;
+  box-shadow: 0px 2px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.snowfall {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url("https://user-images.githubusercontent.com/7342669/50293046-ab4ed880-0440-11e9-8537-8a0e70729b34.png"), url("https://user-images.githubusercontent.com/7342669/50293049-ad189c00-0440-11e9-8cae-a57ad65c22ca.png"), url("https://user-images.githubusercontent.com/7342669/50294834-c58ab580-0444-11e9-84b6-186b19edf94d.png");
+  animation: letItSnow 20s linear infinite;
+  z-index: 11;
+}
+
+@keyframes letItSnow {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px;
+  }
+}
